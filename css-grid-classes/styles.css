@@ -1,0 +1,43 @@
+
+*{
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size:40px;
+  font-weight: bold;
+}
+
+.container {
+  max-width:800px;
+  margin: 0 auto;
+}
+
+.row {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.column-half {
+  flex-basis: 50%;
+}
+
+.column-one-third {
+  flex-basis: 33%;
+}
+
+.column-one-quarter {
+  flex-basis: 25%;
+}
+
+.column-one-quarter img {
+  width:100%;
+}
+
+.column-half img {
+  width: 100%;
+}
+
+.column-one-third img {
+  width:100%;
+}
