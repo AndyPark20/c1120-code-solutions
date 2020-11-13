@@ -1,11 +1,5 @@
 
 
-
-body {
-  height: 100vh;
-
-}
-
 h1 {
    font-family: 'Tiempos Headline' , sans-serif,serif;
   text-transform: lowercase;
@@ -15,24 +9,40 @@ h1 {
 }
 
 img {
-  margin-top:10%;
+  margin-top:5%;
+  /* opacity: .8;
+  filter:brightness(70%) */
 }
 
+.saturation{
+  border:1px solid red;
+  color: red;
+  /* background: linear-gradient(transparent, rgba(0, 0, 0,0.5)); */
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index:10;
 
+}
 
 li {
   display:inline;
   padding: 0 2rem;
   font-family: 'Avenir', sans-serif,serif;
   color: 	#c0c0c0;
-  font-size:18px;
+  font-size:16px;
   font-weight:bold;
 
 }
 
+
 .container {
+  width: 100%;
+  position:relative;
 
 }
+
+
 
 .row {
   display:flex;
