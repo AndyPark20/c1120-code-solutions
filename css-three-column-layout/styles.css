@@ -1,0 +1,61 @@
+
+section {
+  background-color: #1996da;
+}
+
+img {
+width:60px;
+height:60px;
+}
+
+h1 {
+  font-size:40px;
+  font-family: 'Lato', sans-serif, serif;
+  color:white;
+  font-weight: lighter;
+}
+
+h2 {
+  font-size:20px;
+  font-family: 'Lato', sans-serif, serif;
+  color:white;
+  font-weight: lighter;
+}
+
+P {
+  font-size:15px;
+  font-family: 'Lato', sans-serif, serif;
+  color:#DDDDDD;
+  font-weight:lighter
+
+}
+
+.container {
+  width:50%;
+  min-width:850px;
+  text-align: center;
+  margin: 0 25%;
+}
+
+.row {
+  display:flex;
+  justify-content: center;
+}
+
+
+.background-circle {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  background-color:white;
+  width:100px;
+  height:100px;
+  border-radius: 50%;
+}
+
+.column-pictures {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5%;
+}
