@@ -105,19 +105,12 @@ a {
 
 }
 
-.column-about-us h5  {
+.about li  {
    font-family: 'Avenir', sans-serif,serif;
   color: white;
   font-size:20px;
   font-weight: lighter;
 
-}
-
-.column-about-us p {
-   font-family: 'Avenir', sans-serif,serif;
-  color: white;
-  font-size:20px;
-  font-weight: lighter;
 
 }
 
@@ -170,7 +163,7 @@ position:relative;
 
 .get-started-button {
   margin-top:5%;
-   font-family: 'Avenir', sans-serif,serif;
+  font-family: 'Avenir', sans-serif,serif;
   color: white;
   font-weight: 500;
   font-size: 25px ;
@@ -238,6 +231,11 @@ position:relative;
 
 }
 
+.about {
+  display:flex;
+  flex-direction: column;
+  line-height:3.0;
+}
 
 
 .row-footer {
