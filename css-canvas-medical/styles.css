@@ -20,12 +20,34 @@ img {
 
 }
 
+
+
 P {
   color:white;
   font-family: 'Avenir', sans-serif,serif;
   font-size:27px;
   line-height:1.8;
 }
+
+.column-testimony img {
+  width: 50%;
+  margin-bottom:8%;
+}
+
+.column-testimony-middle img {
+  margin-left:25%;
+  width: 100%;
+  margin-bottom:8%;
+}
+
+.column-testimony-last img {
+  width:40%;
+  height: 800px;
+  margin-top:10%;
+  margin-left:5%;
+}
+
+
 
 .saturation{
   background: rgba(0, 0, 0,0.3);
@@ -80,8 +102,6 @@ a {
 }
 
 
-
-
 .prefer-canvas-section p {
    font-family: 'Avenir', sans-serif,serif;
   font-size: 25px;
@@ -111,10 +131,46 @@ a {
   font-size:20px;
   font-weight: lighter;
 
-
 }
 
+/* Please check HERE!!!!!!!! */
+.column-testimony h2 {
+    color:#696969;
+    font-weight: lighter;
+    font-family: 'Tiempos Headline' , sans-serif,serif;
+    font-size:40px;
+}
 
+.column-testimony p {
+   color:#696969;
+   font-family: 'Avenir', sans-serif,serif;
+   font-size:25px;
+}
+
+.column-testimony-middle h2 {
+    color:#696969;
+    font-weight: lighter;
+    font-family: 'Tiempos Headline' , sans-serif,serif;
+    font-size:40px;
+}
+
+.column-testimony-middle p {
+   color:#696969;
+   font-family: 'Avenir', sans-serif,serif;
+   font-size:25px;
+}
+
+.column-testimony-last h2{
+    color:#696969;
+    font-weight: lighter;
+    font-family: 'Tiempos Headline' , sans-serif,serif;
+    font-size:40px;
+}
+.column-testimony-last p {
+   color:#696969;
+   font-family: 'Avenir', sans-serif,serif;
+   font-size:25px;
+}
 
 .hue-saturation {
 margin-top:5%;
@@ -157,6 +213,16 @@ position:relative;
   width:30%;
   height:400px;
   margin: 5% 25% 20% 0%;
+  z-index: 5;
+
+}
+
+.text-update {
+  line-height: 1.6;
+  position:absolute;
+  width:35%;
+  height:400px;
+  margin: 15% 20% 20% 0%;
   z-index: 5;
 
 }
@@ -246,4 +312,47 @@ position:relative;
 
 .column-footer {
   padding-top: 1%;
+}
+
+
+.column-testimony {
+  margin-top:3%;
+  background-color:#F8F8F8;
+  display:flex;
+}
+
+.column-one-half-testimony {
+  flex-basis: 40%;
+  margin: 5% 0 0 5%;
+
+}
+
+.column-testimony-middle  {
+  display:flex;
+}
+
+.column-testimony-last {
+  margin-top:5%;
+  background-color:#F8F8F8;
+  display:flex;
+
+}
+
+.column-one-half-testimony-last{
+ flex-basis: 40%;
+  margin: 5% 0 7% 5%;
+}
+
+.anchor {
+  color: #0f4668;
+  font-weight: 500;
+  font-family: 'Avenir', sans-serif,serif;
+}
+
+.quotes {
+  font-weight: 600;
+}
+
+.color {
+   color: #0f4668;
 }
