@@ -20,14 +20,22 @@ img {
 
 }
 
-
-
 P {
   color:white;
   font-family: 'Avenir', sans-serif,serif;
   font-size:27px;
   line-height:1.8;
 }
+
+
+.column-about img {
+
+  width:45%;
+  height:60%;
+  border-radius:50%;
+
+}
+
 
 .column-testimony img {
   width: 50%;
@@ -48,6 +56,70 @@ P {
 }
 
 
+
+.column-roi h2 {
+  font-family: 'Tiempos Headline' , sans-serif,serif;
+  font-size: 40px;
+  color:#696969;
+
+}
+
+.column-roi span {
+  font-family: 'Avenir', sans-serif,serif;
+  color:#696969;
+  font-weight:lighter;
+  font-size:30px;
+}
+
+.column-roi p {
+  font-family: 'Avenir', sans-serif,serif;
+  color:#696969;
+}
+
+.column-roi-title h2 {
+  font-family: 'Tiempos Headline' , sans-serif,serif;
+  color:#696969;
+  font-weight:500;
+
+}
+
+.column-full h3 {
+  font-family: 'Tiempos Headline' , sans-serif,serif;
+  color:#696969;
+  font-weight:500;
+  font-size:45px;
+
+}
+
+.column-about h3 {
+
+  font-family: 'Tiempos Headline' , sans-serif,serif;
+  color:#696969;
+  font-weight:500;
+  font-size:45px;
+
+}
+
+.column-about p {
+  font-family: 'Avenir', sans-serif,serif;
+  color:#696969;
+  font-weight:500;
+  font-size:25px;
+}
+
+.column-blog h3 {
+  font-family: 'Tiempos Headline' , sans-serif,serif;
+  color: #0f4668;
+  font-weight:500;
+  font-size:50px;
+}
+
+.column-blog p {
+  font-family: 'Avenir', sans-serif,serif;
+  color:#696969;
+  font-size:30px;
+  font-weight:500;
+}
 
 .saturation{
   background: rgba(0, 0, 0,0.3);
@@ -133,7 +205,7 @@ a {
 
 }
 
-/* Please check HERE!!!!!!!! */
+
 .column-testimony h2 {
     color:#696969;
     font-weight: lighter;
@@ -170,6 +242,59 @@ a {
    color:#696969;
    font-family: 'Avenir', sans-serif,serif;
    font-size:25px;
+}
+
+.blog-section h3 {
+  font-family: 'Tiempos Headline' , sans-serif,serif;
+   color:#696969;
+   font-size:50px;
+   font-weight:lighter;
+   line-height:0.1;
+}
+
+.blog-section p{
+  color:#696969;
+   font-family: 'Avenir', sans-serif,serif;
+   font-size:25px;
+}
+.contact-section p {
+  font-family: 'Avenir', sans-serif,serif;
+   font-size:25px;
+   color:#696969;
+}
+
+.contact-section h3 {
+   font-family: 'Tiempos Headline' , sans-serif,serif;
+   color:#696969;
+   font-size:40px;
+   font-weight:lighter;
+}
+
+.contact-section a {
+  font-family: 'Avenir', sans-serif,serif;
+  font-size:35px;
+  color:#0f4668;
+  font-weight:lighter;
+}
+
+.form input {
+
+  margin: 5% 0;
+  border:none;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid lightgray;
+}
+
+.form textarea {
+  padding-top:5%;
+  border:none;
+  width:100%;
+  border-bottom:1px solid lightgray;
+  font-size:25px;
+  text-align: center;
+  color:lightgray;
+  font-family: 'Avenir', sans-serif,serif;s
 }
 
 .hue-saturation {
@@ -223,6 +348,16 @@ position:relative;
   width:35%;
   height:400px;
   margin: 15% 20% 20% 0%;
+  z-index: 5;
+
+}
+
+.text-update-about-us {
+  line-height: 1.6;
+  position:absolute;
+  width:35%;
+  height:400px;
+  margin: 20% 20% 20% 0%;
   z-index: 5;
 
 }
@@ -355,4 +490,147 @@ position:relative;
 
 .color {
    color: #0f4668;
+}
+
+.column-roi-title {
+  text-align: center;
+}
+
+.column-roi {
+  margin-left:23%;
+  padding-right:20%;
+  margin-top:5%;
+}
+
+.row-roi {
+  margin-top:5%;
+}
+
+.column-roi .anchor {
+  color:#0f4668;
+  font-weight: bold;
+}
+
+.row-about {
+  background-color:#F8F8F8;
+  display:flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-bottom:5%;
+  padding-top:5%;
+  margin-top:5%;
+}
+
+.column-about {
+  flex-basis: 30%;
+}
+
+
+.column-full {
+  flex-basis: 100%;
+  margin-top:5%;
+}
+
+.column-roi {
+  margin-bottom:5%;
+}
+
+.row-roi {
+  border-bottom: 1px solid  lightgray;
+  margin-bottom:3%;
+
+}
+
+
+.blog-section {
+  display:flex;
+  flex-direction: column;
+  margin-top:5%;
+
+}
+
+.blog-section input {
+  border-style:none;
+  width:40%;
+  height:50px;
+  border-bottom: 1px solid #696969;
+}
+
+.blog-list {
+  display:flex;
+  flex-wrap: wrap;
+  margin-top:5%;
+}
+
+.column-blog {
+  flex-basis:40%;
+}
+
+.column-blog img {
+  width: 100%;
+}
+
+.offset {
+  padding-bottom:3.5%;
+}
+
+.offset img {
+  height:550px;
+}
+
+input::placeholder {
+  font-size:25px;
+  text-align: center;
+  color:lightgray;
+   font-family: 'Avenir', sans-serif,serif;
+
+}
+
+.contact-session {
+  display:flex;
+  justify-content: space-around;
+  margin-top:5%;
+
+}
+
+.contact-header {
+  margin-left:15%;
+  padding-right: 15%;
+
+}
+
+.contact-section {
+  flex-basis: 40%;
+  margin-top: -15%;
+}
+
+.input {
+  margin-top:3%;
+  margin-right:8%;
+}
+
+
+.form button{
+ font-family: 'Avenir', sans-serif,serif;
+  color: white;
+  font-weight: 500;
+  font-size: 18px ;
+  background-color: #0f4668;
+  height:50px;
+  width: 95px;
+  border-radius: 5px;
+  border:none;
+
+  }
+
+  .contact-button {
+    margin-top:10%;
+    text-align:center;
+  }
+
+  .border-bottom-contact {
+  padding-bottom:3%;
+  border-bottom: 1px solid #c0c0c0;
 }
