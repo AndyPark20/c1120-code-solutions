@@ -37,8 +37,8 @@ function getFirstName (person) {
 var personResult =getFirstName({firstName:'Jason', lastName:'Smith'})
 console.log("the value of the perons's first name is:", personResult);
 
-/**********Get Last Element  ****************************/
 
+/**********Get Last Element  ****************************/
 function getLastElement(array) {
   var $lastIndex =array.length-1;
   var $userLastElement =array[$lastIndex];
