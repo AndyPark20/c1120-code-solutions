@@ -1,0 +1,65 @@
+
+
+
+h2 {
+  font-family: 'DM Sans', sans-serif, serif;
+  font-size:30px;
+
+}
+
+h4 {
+  font-family: 'DM Sans', sans-serif,sans-serif;
+  font-size: 13px;
+}
+
+img {
+ width:90%;
+}
+
+
+span, s {
+  font-family: 'DM Sans', sans-serif,sans-serif;
+  color:lightgray;
+  font-weight:500;
+  font-size: 13px;
+}
+
+
+
+.lvPic img {
+  width: 100%;
+}
+
+.price{
+  font-family: 'DM Sans', sans-serif,sans-serif;
+  font-size: 13px;
+  font-weight:bold;
+  color:black;
+  background-color:#fff2e8;
+}
+
+
+.container {
+  width:1440px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.row {
+
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: flex-end;
+
+}
+
+.column {
+ flex-basis: 16%;
+ padding: 1%;
+}
+
+.features {
+  text-align: left;
+  display:inline;
+}
