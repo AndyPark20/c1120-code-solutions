@@ -1,0 +1,57 @@
+
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0 auto;
+}
+
+.container {
+  height:1920px;
+  width:100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.row {
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column{
+  padding-top:15%;
+}
+
+.buttonOn {
+
+  width:400px;
+  height: 400px;
+  border-radius: 50%;
+  box-shadow: 0 -20px 40px 10px #ffff1a;
+   background-color:#ffff1a;
+
+}
+
+.buttonOff {
+  width:400px;
+  height: 400px;
+  border-radius: 50%;
+  box-shadow: 0 -20px 50px 10px #191919;
+   background-color:#191919;
+  }
+
+button:focus {
+  outline: none;
+}
+
+.switchOn {
+  background-color:#fef9f1;
+}
+
+.switchOff {
+  background-color:black;
+}
