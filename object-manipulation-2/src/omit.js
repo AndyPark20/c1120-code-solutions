@@ -3,15 +3,17 @@
 
 function omit(source, keys) {
 
-  var objectResult ={};
+  var object = {};
+  for (var values in source) {
+    object[values] = source[values]
+  }
+
   for (var i = 0; i < keys.length; i++) {
-    for (var values in source) {
-      if (keys[i] === values) {
-        delete source[values]
-      }else {
-        objectResult[keys[i]]=source[values];
+    for (var valueSource in object) {
+      if (keys[i] === valueSource) {
+        delete object[valueSource];
       }
     }
-
-  return objectResult;
+  }
+  return object;
 }
