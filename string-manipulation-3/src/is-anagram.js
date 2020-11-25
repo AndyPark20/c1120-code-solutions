@@ -20,13 +20,7 @@ function isAnagram(firstString, secondString) {
   }
 
   for (var z = 0; z < secondNoSpace.length; z++) {
-    //add a BANG here later on if statment
-    // if (firstNoSpace.includes(secondNoSpace[z]) === false || firstNoSpace.length !== secondNoSpace.length) {
-    //   debugger;
-    //   return false;
-    // } else if (firstNoSpace.includes(secondNoSpace[z]) === true) {
-    //   return true;
-    // }
+
     if (!firstNoSpace.includes(secondNoSpace[z]) || firstNoSpace.length !== secondNoSpace.length){
       return false;
     }
