@@ -3,6 +3,7 @@ $keyCharacter = document.querySelectorAll('span');
 $modalWindow=document.querySelector('.row-modal')
 $typingAccuracy=document.querySelector('.result');
 $playAgainYes=document.querySelector('.yes');
+$resetField=document.querySelector('body');
 var index = 0;
 var correctCount=0;
 
@@ -42,5 +43,5 @@ function checkCharacters(e) {
 function exitToPlay(){
 
   $modalWindow.classList.add('hidden');
-
+  $resetField.reset();
 }
