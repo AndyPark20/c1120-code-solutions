@@ -7,15 +7,17 @@ function reverseWords(string) {
   var reversedStringArray = [];
   var finalStringResult = '';
 
-  for (var i = array.length - 1; i >= 0; i--) {
-    reversedStringArray.push(string[i]);
+
+  for (var i = array.length - 1; i >= 0.; i--) {
+    reversedStringArray.push(array[i]);
 
   }
-  var finalReversedStringArray = reversedStringArray.join('');
-  var finalSplit = finalReversedStringArray.split(' ');
-  for (var k = finalSplit.length - 1; k > 0; k--) {
-    finalStringResult += finalSplit[k] + ' ';
-
+  var reversedWordString = reversedStringArray.join('')
+  var reversedFinalWordArray = reversedWordString.split(' ')
+  for (var k = reversedFinalWordArray.length - 1; k > 0; k--) {
+    finalStringResult += reversedFinalWordArray[k] + ' ';
   }
-  return finalStringResult += finalSplit[0];
+  return finalStringResult + reversedFinalWordArray[0];
+
+
 }
