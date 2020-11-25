@@ -6,6 +6,7 @@ var $message = document.querySelector('#user-message');
 var $submit = document.querySelector('#contact-form');
 var messageData = {};
 
+
 $name.addEventListener('focus', handleFocus);
 $name.addEventListener('blur', handleBlur);
 $name.addEventListener('input', handleInput);
@@ -39,7 +40,9 @@ function handleInput(event) {
 function inputSubmit(event) {
 
   event.preventDefault();
-  messageData = $submit[0].value;
+  messageData.name = $submit[0].value;
+  messageData.email=$submit[1].value;
+  messageData.message=$submit[2].value;
   console.log(messageData);
 
   $submit.reset();
