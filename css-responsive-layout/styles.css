@@ -31,3 +31,21 @@ body {
 }
 
 /* your code 👇 here */
+
+@media screen and (min-width:576px){
+ .row .col-sm-half{
+    width: 50%;
+  }
+}
+
+
+
+@media screen and (min-width:768px){
+  .row .col-lg-third{
+    width: 33%;
+  }
+
+  .row .col-lg-fourth {
+    width: 25%;
+  }
+}
