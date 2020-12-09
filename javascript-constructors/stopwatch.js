@@ -2,6 +2,7 @@
 
 function Stopwatch(startTimeInSeconds) {
   this.elapsedSeconds = startTimeInSeconds;
+
 }
 
 Stopwatch.prototype.tick = function () {
