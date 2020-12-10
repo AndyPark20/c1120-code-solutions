@@ -8,7 +8,6 @@ function countDown(){
   number--;
   $header.textContent = number;
 
-
   if (number === 0) {
     $header.textContent = '~Earth Beeeeelooowww Us~'
     clearInterval(intervalId);
