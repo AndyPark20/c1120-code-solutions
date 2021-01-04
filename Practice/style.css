@@ -123,3 +123,16 @@ ul{
   display:flex;
   justify-content: space-around;
 }
+
+.container-non{
+  margin: 0 auto;
+}
+
+.row {
+  margin-left:50px;
+  text-align:center;
+}
+
+.col-md-8{
+  border:1px solid black;
+}
