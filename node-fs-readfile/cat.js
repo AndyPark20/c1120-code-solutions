@@ -1,14 +1,16 @@
 
-const fs = require('fs');
-const userArray = process.argv;
-let result ='';
+const fs= require('fs');
+const userInput =process.argv;
+const text =[];
 
-for (let i=2; i<userArray.length;i++){
-  fs.readFile(userArray[i],'utf8',(err, data)=>{
+
+for (let i=2; i<userInput.length;i++){
+  fs.readFile(userInput[i],'utf8',(err,data)=>{
     if(err){
-      console.log(err);
+      console.log(err)
     }else if(data){
-      console.log(result=data);
+      text.unshift(data);
+      console.log(text);
     }
   })
 }
