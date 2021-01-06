@@ -1,153 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <div class="container-fluid border-bottom box-shadow">
-    <div class="row-navi">
-      <div class="d-flex my-auto justify-content-between align-items-center">
-        <h5 class="col-12 col-sm-6 text-dark">Company Name</h5>
-        <ul class="col-12 col-sm-6 d-flex align-items-center">
-          <a class="p-2  text-dark"><li>Features</li></a>
-          <a class="p-2 text-dark"><li>Enterprise</li></a>
-          <a class="p-2 text-dark"><li>Support</li></a>
-          <a class="p-2 text-dark"><li>Pricing</li></a>
-          <li class="p-2 text-dark"><button type="button" class="btn btn-outline-primary">Sign-up</button></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid">
-    <div class="row text-center mx-auto d-flex justify-content-center">
-      <div class="col-12 py-4 pricing-Content">
-        <h1 class="display-4">Pricing</h1>
-        <p class="style">QUICKLY build an effective pricing table for your potential customers
-          with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization
-        </p>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="container-footer">
-    <div class="row-footer">
-      <div class="column-footer">
-        <h3>B</h3>
-        <p>&copy; 2017-2018</p>
-      </div>
-        <div class="column-footer footer-bottom">
-          <ul>
-          <li><h3>Features</h3></li>
-          <li>Cool Stuff</li>
-          <li>Random Feature</li>
-          <li>Team Feature</li>
-          <li>Stuff for developers</li>
-          <li>Another one</li>
-          <li>Last Time</li>
-          </ul>
-        </div>
-        <div class="column-footer">
-          <ul>
-          <li><h3>Resources</h3></li>
-          <li>Resource</li>
-          <li>Resource Name</li>
-          <li>Another Resource</li>
-          <li>Final resource</li>
-          </ul>
-        </div>
-        <div class="column-footer">
-          <ul>
-          <li><h3>About</h3></li>
-          <li>Team</li>
-          <li>Locations</li>
-          <li>Privacy</li>
-          <li>Terms</li>
-          </ul>
-        </div>
-    </div>
-  </div>
-</body>
-
-</html>
-
-<!-- <!doctype html>
-<html lang="en">
-
-<head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="style.css">
   <title>Hello, world!</title>
 </head>
 
 <body>
-  <div class="container">
+  <div class="container-fluid p-3 border-bottom">
     <div class="row">
-      <div class="col text-center mt-5">
-        <p class="display-1">Pricing</p>
-        <p class="h3 font-weight-light">Quickly build an effective pricing table for your potential customers with this
-          Boostrap example.
-          It's built with defualts Bootstrap components and utilities with littlie customization.</p>
+      <div class="h4 col-12 d-flex justify-content-center col-md-2 font-weight-normal">Company name</div>
+      <div class="col-12 d-flex justify-content-center col-md-9 justify-content-md-end">
+        <a class="p-2 text-dark">Features</a>
+        <a class="p-2 text-dark">Enterprise</a>
+        <a class="p-2 text-dark">Support</a>
+        <a class="p-2 text-dark">Pricing</a>
+      </div>
+      <div class="col-12 d-flex justify-content-center col-md-1 justify-content-md-start">
+        <button type="button" class="btn btn-outline-primary">Sign up</button>
       </div>
     </div>
-    <div class="row d-flex justify-content-center">
-      <div class="col-4 border rounded">
-        <p class="display-4 text-center">Free</p>
-        <div class="row border rounded">
-          <div class="col-12 text-center">
-            <p class="h3">$0/mo</p>
-            <p class="h5 font-weight-light">10 user included 2 GB of storage Email support Help center access</p>
-            <button type="button" class="btn btn-outline-primary w-75 mx-auto">Sign up for free</button>
+  </div>
+
+  <div class="container border-bottom">
+    <div class="row">
+      <div class="col-12 pricing-Content mx-auto my-4">
+        <div class="display-4 d-flex flex-column align-items-center">Pricing</div>
+        <p class="custom text-center">Quickly build an effective pricing table for your potential customers with this
+          Bootstrap example. It's built with
+          default Bootstrap components and utilities with little customization.</p>
+      </div>
+    </div>
+    <div class="card-deck">
+      <div class=" col-12 row d-flex justify-content-center">
+        <div class="card border-light mb-3 text-center" style="max-width: 21rem;">
+          <div class="card-header h4 font-weight">Free</div>
+          <div class="card-body text-secondary">
+            <h2 class="card-title text-center"><span class="h2 text-dark">$0</span> / mo</h2>
+            <p class="card-text widthProp">10 users included 2 GB of storage Email support Help center access
+            </p>
+            <a href="#" class="btn btn-outline-primary w-75">Sign up for free</a>
           </div>
         </div>
-      </div>
-      <div class="col-4 border rounded">
-        <p class="display-4 text-center">Pro</p>
-        <div class="row border rounded">
-          <div class="col-12 text-center">
-            <p class="h3">$15/mo</p>
-            <p class="h5 font-weight-light">10 user included 2 GB of storage Email support Help center access</p>
-            <button type="button" class="btn btn-primary w-75 mx-auto">Sign up for free</button>
+        <div class="card border-light mb-3 text-center" style="max-width: 21rem;">
+          <div class="card-header h4 font-weight">Pro</div>
+          <div class="card-body text-secondary">
+            <h2 class="card-title text-center"><span class="h2 text-dark">$15</span> / mo</h2>
+            <p class="card-text widthProp">10 users included 2 GB of storage Email support Help center access
+            </p>
+            <a href="#" class="btn btn-primary w-75">Get Started</a>
           </div>
         </div>
-      </div>
-      <div class="col-4 border rounded">
-        <p class="display-4 text-center">Enterprise</p>
-        <div class="row border rounded">
-          <div class="col-12 text-center">
-            <p class="h3">$29/mo</p>
-            <p class="h5 font-weight-light">10 user included 2 GB of storage Email support Help center access</p>
-            <button type="button" class="btn btn-primary w-75 mx-auto">Sign up for free</button>
+        <div class="card border-light mb-3 text-center" style="max-width: 21rem;">
+          <div class="card-header h4 font-weight">Enterprise</div>
+          <div class="card-body text-secondary">
+            <h2 class="card-title text-center"><span class="h2 text-dark">$29</span> / mo</h2>
+            <p class="card-text widthProp">10 users included 2 GB of storage Email support Help center access
+            </p>
+            <a href="#" class="btn btn-primary w-75">Contact us</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="logo">
+        <p class="copyRight">&copy; 2017 ~ 2018</p>
+      </div>
+      <div class="col-6 d-flex flex-column col-md-3">
+        <a class="h6 text-dark font-weight-bold">Features</a>
+        <a class="size text-dark">Cool Stuff</a>
+        <a class="size text-dark">Random feature</a>
+        <a class="size text-dark">Team feature</a>
+        <a class="size text-dark">Stuff for developers</a>
+        <a class="size text-dark">Another one</a>
+        <a class="size text-dark">Last Time</a>
+      </div>
+      <div class="col-6 d-flex flex-column col-md-3">
+        <a class="h6 text-dark font-weight-bold">Resources</a>
+        <a class="size text-dark">Resource</a>
+        <a class="size text-dark">Resource name</a>
+        <a class="size text-dark">Another Resource</a>
+        <a class="size text-dark">Final Resource</a>
+      </div>
+        <div class="spacing col-6 d-flex flex-column col-md-3">
+          <a class="h6 text-dark font-weight-bold">About</a>
+          <a class="size text-dark">Team</a>
+          <a class="size text-dark">Locations</a>
+          <a class="size text-dark">Privacy</a>
+          <a class="size text-dark">Terms</a>
+        </div>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
-
-</body> -->
+</body>
 
 </html>
