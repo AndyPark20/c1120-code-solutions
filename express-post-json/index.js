@@ -9,13 +9,16 @@ app.use(jsonInitial)
 
 app.get('/api/grades',(req,res,next)=>{
   let array = [];
-  array.push(grades);
+  for(const prop in grades){
+    array.push(grades[prop]);
+  }
+
   res.json(array);
 })
 
 app.post('/api/grades',(req,res)=>{
-  grades =req.body;
-  grades.id= nextId++;
+  grades[nextId] =req.body;
+  grades[nextId].id= nextId++;
   res.status(201).send(grades)
 });
 
