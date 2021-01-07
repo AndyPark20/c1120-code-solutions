@@ -8,9 +8,6 @@ let array=[];
 app.use(jsonInitial)
 
 app.get('/api/grades',(req,res,next)=>{
-  for (const prop in grades){
-    array.push(grades[prop]);
-  }
   res.json(array);
 })
 
