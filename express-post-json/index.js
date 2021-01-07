@@ -15,7 +15,7 @@ app.post('/api/grades',(req,res)=>{
   let object =req.body;
   object.id= nextId++;
   array.push(object)
-  res.status(201).send(req.body);
+  res.status(201).send(array);
 });
 
 app.listen(3000,()=>{
