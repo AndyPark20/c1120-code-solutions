@@ -1,7 +1,5 @@
 const express = require('express');
 const fs = require('fs');
-const { get } = require('http');
-const { send } = require('process');
 const app = express();
 const data = require('./data.json');
 const JsonMiddleWare = express.json();
@@ -27,7 +25,7 @@ app.get('/api/notes/:id', (req, res, next) => {
 
   if (inputNumber !== Math.abs(inputNumber)) {
     res.status(400).json(`Error: Sorry, but the ID needs to be a positive integer`)
-  } else if (inputNumber === Math.abs(inputNumber)) {
+  } else {
     if (dataNotes[inputNumber]) {
       return(res.status(200).json(dataNotes[inputNumber]))
     } else {
@@ -38,12 +36,11 @@ app.get('/api/notes/:id', (req, res, next) => {
 
 // post request to create a new note
 app.post('/api/notes', (req, res, next) => {
-  let nextIds = data.nextId++;
-  data.notes[nextIds] = req.body;
-
-  if (Object.entries(req.body).length === 0) {
-    res.status(400).json(`Error: Please fill out the required field!`)
-  } else if (req.body !== {}) {
+  if (!req.body.content) {
+    return(res.status(400).json(`Error: Please fill out the required field!`))
+  } else if (req.body.content) {
+    let nextIds = data.nextId++;
+    data.notes[nextIds] = req.body;
     data.notes[nextIds].id = nextIds;
     fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
       if (err) {
@@ -61,14 +58,11 @@ app.delete('/api/notes/:id', (req, res, next) => {
   const userNum = parseInt(req.params.id, 10);
 
   if (userNum !== Math.abs(userNum)) {
-    res.status(400).json(`Error: Sorry, but the ID needs to be a positive integer`)
+    return(res.status(400).json(`Error: Sorry, but the ID needs to be a positive integer`))
   } else if (!dataNotes[userNum]) {
-    res.status(404).json(`Error: Sorry, no matching ID# ${userNum} found!`)
-  } else if (dataNotes[userNum]) {
+    return(res.status(404).json(`Error: Sorry, no matching ID# ${userNum} found!`))
+  } else {
     delete data.notes[userNum];
-    if (userNum === (data.nextId) - 1) {
-      data.nextId--;
-    }
     fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
       if (err) {
         return(res.status(500).json('Error: Ooops something went wrong, please try again!'))
@@ -85,13 +79,13 @@ app.put('/api/notes/:id', (req, res) => {
 
   if (userNum !== Math.abs(userNum)){
     return(res.status(400).json(`Error: Sorry, but the ID needs to be a positive integer`))
-  } else if (Object.entries(req.body).length === 0) {
+  } else if (!req.body.content) {
     return(res.status(400).json(`Error: Please fill out the required field`))
   }
 
   if (!data.notes[userNum]) {
-    res.status(404).json(`Error: Sorry, no matching ID# ${userNum} found!`)
-  } else if(data.notes[userNum]) {
+    return(res.status(404).json(`Error: Sorry, no matching ID# ${userNum} found!`))
+  } else {
     data.notes[userNum] = req.body;
     data.notes[userNum].id = userNum;
     fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
