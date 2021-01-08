@@ -38,7 +38,7 @@ app.get('/api/notes/:id', (req, res, next) => {
 app.post('/api/notes', (req, res, next) => {
   if (!req.body.content) {
     return(res.status(400).json(`Error: Please fill out the required field!`))
-  } else if (req.body.content) {
+  } else {
     let nextIds = data.nextId++;
     data.notes[nextIds] = req.body;
     data.notes[nextIds].id = nextIds;
