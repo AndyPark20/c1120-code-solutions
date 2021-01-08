@@ -16,7 +16,7 @@ app.get('/api/notes', (req, res, next) => {
   for (const prop in dataNotes) {
     array.push(dataNotes[prop])
   }
-  res.status(200).json(array);
+  return(res.status(200).json(array));
 })
 
 
@@ -29,9 +29,9 @@ app.get('/api/notes/:id', (req, res, next) => {
     res.status(400).json(`Error: Sorry, but the ID needs to be a positive integer`)
   } else if (inputNumber === Math.abs(inputNumber)) {
     if (dataNotes[inputNumber]) {
-      res.status(200).json(dataNotes[inputNumber])
+      return(res.status(200).json(dataNotes[inputNumber]))
     } else {
-      res.status(404).json(`Error: Sorry, no matching ID# ${inputNumber} found!`)
+      return(res.status(404).json(`Error: Sorry, no matching ID# ${inputNumber} found!`))
     }
   }
 })
@@ -47,51 +47,63 @@ app.post('/api/notes', (req, res, next) => {
     data.notes[nextIds].id = nextIds;
     fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
       if (err) {
-        res.status(500).json(`Error: Ooops something went wrong, please try again!`)
-      }else {
-        res.status(201).json(data.notes[nextIds]);
+        return(res.status(500).json(`Error: Ooops something went wrong, please try again!`))
+      } else {
+        return(res.status(201).json(data.notes[nextIds]));
       }
     })
   }
 })
 
 //Delete request and delete note by ID
-app.delete('/api/notes/:id',(req,res,next)=>{
+app.delete('/api/notes/:id', (req, res, next) => {
   const dataNotes = data.notes
-  const userNum =parseInt(req.params.id,10);
+  const userNum = parseInt(req.params.id, 10);
 
-  if(userNum !==Math.abs(userNum)){
-    res.status(400).send(`Error: Sorry, but the ID needs to be a positive integer`)
-  }else if(!dataNotes[userNum]){
-    res.status(404).send(`Error: Sorry, no matching ID# ${userNum} found!`)
-  }else if(dataNotes[userNum]){
+  if (userNum !== Math.abs(userNum)) {
+    res.status(400).json(`Error: Sorry, but the ID needs to be a positive integer`)
+  } else if (!dataNotes[userNum]) {
+    res.status(404).json(`Error: Sorry, no matching ID# ${userNum} found!`)
+  } else if (dataNotes[userNum]) {
     delete data.notes[userNum];
-    if(userNum ===(data.nextId)-1){
+    if (userNum === (data.nextId) - 1) {
       data.nextId--;
     }
-    fs.writeFile('data.json',JSON.stringify(data,null,2),(err)=>{
-      if(err){
-        res.status(500).json('Error: Ooops something went wrong, please try again!')
-      }else{
-        res.status(204).send();
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
+      if (err) {
+        return(res.status(500).json('Error: Ooops something went wrong, please try again!'))
+      } else {
+        return(res.status(204).end());
       }
     })
   }
 })
 
 //Put request and replace note by ID
-app.put('/api/notes/:id',(req,res)=>{
-  const dataNotes=data.notes;
-  const userNum=parseInt(req.params.id,10);
+app.put('/api/notes/:id', (req, res) => {
+  const userNum = parseInt(req.params.id, 10);
 
-  if (userNum !== Math.abs(userNum) || Object.entries(req.body).length === 0) {
-    res.status(400).send(`Error: Sorry, but the ID needs to be a positive or valid integer`)
+  if (userNum !== Math.abs(userNum)){
+    return(res.status(400).json(`Error: Sorry, but the ID needs to be a positive integer`))
+  } else if (Object.entries(req.body).length === 0) {
+    return(res.status(400).json(`Error: Please fill out the required field`))
   }
-  fs.readFile('data.json','utf8',(err,data)=>{
 
-  })
-
+  if (!data.notes[userNum]) {
+    res.status(404).json(`Error: Sorry, no matching ID# ${userNum} found!`)
+  } else if(data.notes[userNum]) {
+    data.notes[userNum] = req.body;
+    data.notes[userNum].id = userNum;
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
+      if (err) {
+        return(res.status(500).json('Error: Ooops something went wrong, please try again!'))
+      } else {
+        return(res.status(200).json(data.notes[userNum]))
+      }
+    })
+  }
 })
+
 
 //listen for a call on port 3000
 app.listen(3000, () => {
