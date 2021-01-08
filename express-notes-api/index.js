@@ -1,10 +1,10 @@
 const express = require('express');
-const fs = require('fs')
+const fs = require('fs');
+const { get } = require('http');
+const { send } = require('process');
 const app = express();
 const data = require('./data.json');
-const JsonMiddleWare =express.json();
-let nextIds = data.nextId;
-let object = {};
+const JsonMiddleWare = express.json();
 
 //Json middleware
 app.use(JsonMiddleWare);
@@ -38,22 +38,58 @@ app.get('/api/notes/:id', (req, res, next) => {
 
 // post request to create a new note
 app.post('/api/notes', (req, res, next) => {
-  object[nextIds].id = nextIds;
-  object[nextIds]=req.body;
-  data.notes= object;
+  let nextIds = data.nextId++;
+  data.notes[nextIds] = req.body;
 
-
-
-  res.json(req.body)
-  if(Object.entries(req.body).length===0){
+  if (Object.entries(req.body).length === 0) {
     res.status(400).json(`Error: Please fill out the required field!`)
-  }else if (req.body !=={}){
-    fs.writeFile('data.json',JSON.stringify(data,null,2),(err)=>{
-      if(err){
-        console.log(err);
+  } else if (req.body !== {}) {
+    data.notes[nextIds].id = nextIds;
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
+      if (err) {
+        res.status(500).json(`Error: Ooops something went wrong, please try again!`)
+      }else {
+        res.status(201).json(data.notes[nextIds]);
       }
     })
   }
+})
+
+//Delete request and delete note by ID
+app.delete('/api/notes/:id',(req,res,next)=>{
+  const dataNotes = data.notes
+  const userNum =parseInt(req.params.id,10);
+
+  if(userNum !==Math.abs(userNum)){
+    res.status(400).send(`Error: Sorry, but the ID needs to be a positive integer`)
+  }else if(!dataNotes[userNum]){
+    res.status(404).send(`Error: Sorry, no matching ID# ${userNum} found!`)
+  }else if(dataNotes[userNum]){
+    delete data.notes[userNum];
+    if(userNum ===(data.nextId)-1){
+      data.nextId--;
+    }
+    fs.writeFile('data.json',JSON.stringify(data,null,2),(err)=>{
+      if(err){
+        res.status(500).json('Error: Ooops something went wrong, please try again!')
+      }else{
+        res.status(204).send();
+      }
+    })
+  }
+})
+
+//Put request and replace note by ID
+app.put('/api/notes/:id',(req,res)=>{
+  const dataNotes=data.notes;
+  const userNum=parseInt(req.params.id,10);
+
+  if (userNum !== Math.abs(userNum) || Object.entries(req.body).length === 0) {
+    res.status(400).send(`Error: Sorry, but the ID needs to be a positive or valid integer`)
+  }
+  fs.readFile('data.json','utf8',(err,data)=>{
+
+  })
 
 })
 
