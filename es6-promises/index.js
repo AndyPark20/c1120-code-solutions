@@ -7,5 +7,5 @@ promiseResult.then((success)=>{
 })
 
 promiseResult.catch((fail)=>{
-  console.log(fail);
+  console.log(fail.message);
 })
