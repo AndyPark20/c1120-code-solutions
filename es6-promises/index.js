@@ -2,10 +2,10 @@ const takeAChance = require('./take-a-chance');
 
  const promiseResult =takeAChance('Andy')
 
-promiseResult.then((response)=>{
-    console.log(response);
+promiseResult.then((success)=>{
+    console.log(success);
 })
 
-promiseResult.catch((reject)=>{
-  console.log(reject);
+promiseResult.catch((fail)=>{
+  console.log(fail);
 })
