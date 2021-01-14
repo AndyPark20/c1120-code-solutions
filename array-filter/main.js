@@ -32,6 +32,16 @@ const startE = names.filter(names=>{
   }
 })
 
+//OR use startsWith to find the string that starts with E.
+
+// const startE = names.filter(name => {
+//   for (var i = 0; i < name.length; i++) {
+//     if (name[i].startsWith('E')) {
+//       return name;
+//     }
+//   }
+// })
+
 const includeDd =names.filter(names=>{
   for (var i=0;i<names.length;i++){
     for (var j=0;j<names[i].length;j++){
@@ -41,6 +51,16 @@ const includeDd =names.filter(names=>{
     }
   }
 })
+
+//OR use includes() to find tje string that has the letters that you need.
+// const includeDd = names.filter(name => {
+//   for (var i = 0; i < name.length; i++) {
+//     if (name[i].includes('D') || name[i].includes('d')) {
+//       return name;
+//     }
+//   }
+// })
+
 
 console.log(`Even Number values are: ${evenNumbers}`);
 console.log(`Numbers greater than 5: ${overFive}`);
