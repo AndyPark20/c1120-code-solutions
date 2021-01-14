@@ -112,8 +112,9 @@ app.delete('/api/grades/:gradeId', (req, res, next) => {
     const params = [inputGradeId];
     db.query(sql, params)
       .then(result => {
-        if (result) {
-          return (res.status(204).json('Selected data has been successfully deleted'));
+        const grades=result.rows[0]
+        if (grades) {
+          return (res.status(204).end());
         } else {
           return (res.status(404).json(`Error: Sorry, no matching ID# ${inputGradeId} found!`))
         }
