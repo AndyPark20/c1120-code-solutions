@@ -1,0 +1,40 @@
+
+.center{
+  text-align:center;
+  margin-top: 15%;
+}
+
+.sizing{
+  width:10rem;
+  height:75px;
+}
+
+.three{
+  background-color: #32174d;
+  color:white;
+}
+
+.six{
+  background-color:purple;
+  color:white;
+}
+
+.nine{
+  background-color:red;
+  color:white;
+}
+
+.twelve{
+  background-color:orange;
+  color:white;
+}
+
+.fifteen{
+  background-color:yellow;
+  color:white;
+}
+
+.eighteen{
+  background-color:white;
+  color:black;
+}
