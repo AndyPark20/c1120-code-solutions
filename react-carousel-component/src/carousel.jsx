@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-console.log('FINALZEDEDZZZrf')
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +11,7 @@ export default class Carousel extends React.Component {
 
   handleChange(event) {
     const name = event.target.className
-    const iconClick = parseInt(event.target.getAttribute('id'))
+    const iconClick = parseInt(event.target.id)
     clearInterval(this.intervalId)
     this.intervalId = setInterval(() => {
       this.setState({ counter: this.state.counter + 1 })
