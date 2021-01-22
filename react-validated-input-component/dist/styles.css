@@ -1,0 +1,63 @@
+
+h3{
+  font-size:1rem;
+}
+
+label{
+  font-size:1.3rem;
+  font-weight:bold;
+}
+
+input{
+  border:2px solid black;
+  height:1rem;
+}
+
+.column{
+  display:flex;
+  align-items: center;
+}
+
+.font{
+  font-weight:bold;
+  font-size:1.2rem;
+}
+
+.container{
+ display:flex;
+ justify-content: center;
+ margin-top:15%;
+}
+
+.reason{
+  line-height: 0;
+  padding-bottom:10%;
+}
+
+.status{
+  display:flex;
+  align-items: center;
+}
+
+.fas{
+  font-size:1.5rem;
+  margin-left:5%;
+}
+
+.correct{
+  padding:2%;
+}
+
+.fa-check{
+  color:green;
+
+}
+
+
+.fa-times{
+  color:red;
+}
+
+.fontRed{
+  color:red;
+}
