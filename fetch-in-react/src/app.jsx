@@ -17,15 +17,16 @@ class App extends React.Component {
         'Content-type': 'application/json'
       }
     })
+
     .then(res=>{
       return res.json()
     })
     .then(result=>{
-      users.push(result);
+      this.setState({users:result, isLoading:false})
     })
 
     .catch(err=>{
-      console.log('Error',err)
+     return err;
     })
     /* your code here */
   }
