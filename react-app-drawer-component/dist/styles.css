@@ -1,0 +1,64 @@
+*{
+  box-sizing:border-box;
+}
+
+html, body{
+  margin:0;
+  padding:0;
+}
+
+.outter{
+   margin:0;
+  padding:0;
+}
+
+i{
+  position:absolute;
+    margin-left: 2%;
+   cursor: pointer;
+}
+
+ul{
+  list-style-type: none;
+  cursor: pointer;
+}
+
+h2{
+  font-weight:bold;
+  font-size:2rem;
+}
+
+.container{
+  width:100%;
+  height: 100vh;
+}
+
+.row{
+    display:flex;
+    height:100vh;
+
+}
+
+.columnHamburger{
+  width:20%;
+  background-color: white;;
+  border:4px solid black;
+  height:100%;
+
+
+}
+
+.columnShade{
+  width:100%;
+  background-color:grey;
+  cursor: pointer;
+}
+
+.hidden{
+  display:none;
+}
+
+.fa-bars{
+  margin-top:2%;
+  font-size:2rem;
+}
