@@ -34,7 +34,6 @@ export default class App extends React.Component {
       })
       .then(data => {
         const copy = this.state.todos.concat(data);
-        console.log(copy)
         this.setState({ todos: copy })
       })
       .catch(err => {
@@ -65,6 +64,9 @@ export default class App extends React.Component {
         const copy = this.state.todos.concat(result)
         this.setState({ todos: copy })
       })
+      .catch(err => {
+        return err;
+      })
   }
 
   toggleCompleted(todoId) {
@@ -81,24 +83,55 @@ export default class App extends React.Component {
      *
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
-    //  */
-    console.log(todoId)
-    // const test = this.state.todos.map(value => {
-    //   if (todoId === value.todoId) {
-    //     fetch(`/api/todos/${todoId}`,{
-    //       method:'PATCH',
-    //       header:{'content-type':'application/json'},
-    //       body:JSON.stringify({isCompleted:true})
-    //     })
-    //     .then(res=>{
-    //       return res.json();
-    //     })
-    //     .then(data=>{
-    //       console.log(data);
-    //     })
-    //   }
-    // })
-    // console.log(test)
+     */
+
+    const test = this.state.todos.map(value => {
+      if (todoId === value.todoId && value.isCompleted === false) {
+        fetch(`/api/todos/${todoId}`, {
+          method: 'PATCH',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ isCompleted: true })
+        })
+          .then(res => {
+            return res.json();
+          })
+          .then(data => {
+            this.state.todos.map(values=>{
+              if(values.todoId === data.todoId){
+                const array = this.state.todos.concat();
+                array.splice(values.todoId-1,1,data)
+                this.setState({todos:array})
+              }
+            })
+          })
+
+          .catch(err => {
+            return err;
+          })
+      } else if (todoId === value.todoId && value.isCompleted === true) {
+        fetch(`/api/todos/${todoId}`, {
+          method: 'PATCH',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ isCompleted: false })
+        })
+          .then(res => {
+            return res.json();
+          })
+          .then(data => {
+            this.state.todos.map(values => {
+              if (values.todoId === data.todoId) {
+                const array = this.state.todos.concat();
+                array.splice(values.todoId - 1, 1, data)
+                this.setState({ todos: array })
+              }
+            })
+          })
+          .catch(err => {
+            return err;
+          })
+      }
+    })
+
   }
 
   render() {
