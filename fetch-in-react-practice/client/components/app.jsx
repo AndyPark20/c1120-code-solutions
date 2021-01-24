@@ -39,7 +39,6 @@ export default class App extends React.Component {
       .catch(err => {
         return err;
       })
-
   }
 
   addTodo(newTodo) {
@@ -51,7 +50,6 @@ export default class App extends React.Component {
     * TIP: Be sure to SERIALIZE the todo object in the body with JSON.stringify()
     * and specify the "Content-Type" header as "application/json"
     */
-
     fetch('/api/todos', {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
@@ -84,7 +82,6 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
-
     const test = this.state.todos.map(value => {
       if (todoId === value.todoId && value.isCompleted === false) {
         fetch(`/api/todos/${todoId}`, {
@@ -96,15 +93,14 @@ export default class App extends React.Component {
             return res.json();
           })
           .then(data => {
-            this.state.todos.map(values=>{
-              if(values.todoId === data.todoId){
+            this.state.todos.map(values => {
+              if (values.todoId === data.todoId) {
                 const array = this.state.todos.concat();
-                array.splice(values.todoId-1,1,data)
-                this.setState({todos:array})
+                array.splice(values.todoId - 1, 1, data)
+                this.setState({ todos: array })
               }
             })
           })
-
           .catch(err => {
             return err;
           })
@@ -131,7 +127,6 @@ export default class App extends React.Component {
           })
       }
     })
-
   }
 
   render() {
