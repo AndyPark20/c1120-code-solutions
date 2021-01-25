@@ -33,7 +33,6 @@ app.post('/api/auth/sign-up', (req, res, next) => {
         .then(result => {
           const info = result.rows;
           res.status(201).json(info);
-
         });
     })
 
