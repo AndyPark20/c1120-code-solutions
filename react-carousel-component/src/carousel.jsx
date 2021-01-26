@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-console.log('FINAL')
+
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = { counter: 0 }
     this.handlePreviousImage = this.handlePreviousImage.bind(this)
     this.handleNextImage = this.handleNextImage.bind(this)
-    this.circleChange = this.circleChange.bind(this)
     this.circleClick =this.circleClick.bind(this)
   }
 
@@ -28,13 +27,6 @@ export default class Carousel extends React.Component {
     }
   }
 
-  handleChange(event) {
-    const name = event.target.className
-    const iconClick = parseInt(event.target.id)
-    if (iconClick === iconClick) {
-      this.setState({ counter: iconClick })
-    }
-  }
 
   circleChange() {
     const circle = this.props.pokemon.map((values,index) => {
@@ -73,16 +65,16 @@ export default class Carousel extends React.Component {
 
   render() {
     return (
-      <div className="container" onClick={this.circleChange}>
+      <div className="container">
         <div className="row">
-          <i class="fas fa-chevron-left" onClick={this.handlePreviousImage}></i>
+          <i class="fas fa-chevron-left font-size-arrows" onClick={this.handlePreviousImage}></i>
           <div className="column">
             {this.pictureChange()}
             <div className="circle" onClick={this.circleClick}>
               {this.circleChange()}
             </div>
           </div>
-          <i class="fas fa-chevron-right" onClick={this.handleNextImage}></i>
+          <i class="fas fa-chevron-right font-size-arrows" onClick={this.handleNextImage}></i>
         </div>
       </div>
     );
