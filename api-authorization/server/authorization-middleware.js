@@ -3,10 +3,11 @@ const ClientError = require('./client-error'); // eslint-disable-line
 
 function authorizationMiddleware(req, res, next) {
   /* your code here */
-  if(!req.headers){
+  const token = req.headers['x-access-token']
+  if(!token){
     throw new ClientError(401,'authentication required')
   }else{
-    const payload = jwt.verify(req.headers['x-access-token'], process.env.TOKEN_SECRET);
+    const payload = jwt.verify(token, process.env.TOKEN_SECRET);
     req.user = payload;
     next();
   }
