@@ -1,0 +1,29 @@
+A.	When user clicks Register:
+
+1.	The event ‘hashchange’ will fire off setState method of this object and will store a string value of the path property. (here it will setstate “sign up” to property name route)
+2.	If the path is ‘sign up’ then it will render <Auth /> JSX element if not it will just render <Home /> JSX element.
+3.	Then in the AuthPage class Component, we are able to receive the state properties set in App.jsx via this.context.
+-	With those properties and methods received, we can display welcomeMessage.
+-	Those properties and methods (this.context.user, route, handleSignIn) we pass into the AuthForm component as a props.
+-	Then in AuthForm the props will be used to send a post request for ‘signup’.
+-	If the value of promise is ‘sign-up’, then it will reassign window.location.hash to ‘sign-in’.
+-	This will render <Auth> JSX component element.
+
+B.	When user clicks sign in:
+
+1.	When user clicks sign in, the hashchange will fire off setState method of this object and will store a string value of the path property. (here it will setState “Sign in”).
+2.	Then it will display the Auth component of JSX element.
+3.	Property values similar to “register” steps will be passed down via contentType property.
+4.	The this.context property values will be assigned as a props value for the AuthForm JSX component.
+5.	In the Auth-form it will send a fetch request based on the this.props.action (has the path value).
+6.	If user and token properties return true, then it will cause onSignIn method with result argument to initiate which will cause handleSignIn method to work. (will set the token via localStorage).
+
+C.	When user clicks Sign out:
+
+1.	The hashchange will fire off setState method of this object and will store the value of the path property.
+2.	The handleSignIn method will remove the token from localstorage via removeItem.
+3.	And will also setState back to null which will render the Home JSX element component.
+
+D.	UserCan still signin even after refreshing the page:
+
+1.	Since the Token has been saved in the localstorage, User can still stay logged in until that token has been removed from the localStorage (via handleSignout).
