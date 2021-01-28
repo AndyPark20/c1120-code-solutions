@@ -27,6 +27,8 @@ app.post('/api/uploads', uploadsMiddleware, (req, res, next) => {
    * - respond with the inserted row data
    * - catch any errors
    */
+
+  console.log('FILENAME',req.file.filename)
   const url =`/images/${req.file.filename}`
   const sql = `
   insert into "images" ("caption", "url")

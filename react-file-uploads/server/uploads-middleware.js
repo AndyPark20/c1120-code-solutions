@@ -9,7 +9,6 @@ const storage = multer.diskStorage({
     callback(null, imagesDirectory);
   },
   filename(req, file, callback) {
-    console.log('FILE',file)
     const fileExtension = path.extname(file.originalname);
     const name = `${file.fieldname}-${Date.now()}${fileExtension}`;
     callback(null, name);
