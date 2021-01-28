@@ -18,7 +18,6 @@ app.use(jsonMiddleware);
 
 app.post('/api/uploads', uploadsMiddleware, (req, res, next) => {
   const { caption } = req.body;
-  console.log(caption)
   if (!caption) {
     throw new ClientError(400, 'caption is a required field');
   }
@@ -38,7 +37,6 @@ app.post('/api/uploads', uploadsMiddleware, (req, res, next) => {
   db.query(sql, params)
 
   .then(result=>{
-    console.log(result.rows)
     const user=result.rows;
     res.status(201).json(user);
   })
